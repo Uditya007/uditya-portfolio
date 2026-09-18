@@ -59,7 +59,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className={`relative min-h-screen ${
+    <div className={`relative min-h-screen overflow-x-hidden ${
       fireMode ? 'bg-[#0a0302] text-[#fff5ee]' : 'bg-[#080808] text-[#f5f5f5]'
     } bg-grid-tech transition-colors duration-500`}>
       {/* 60 FPS Procedural Burning Fire Canvas & Rising Embers */}
@@ -79,7 +79,7 @@ export default function App() {
       <button
         onClick={handleToggleFire}
         title={fireMode ? "Extinguish Fire Theme (Return to Dark Stealth)" : "Ignite Burning Fire Theme"}
-        className={`fixed bottom-6 right-6 z-50 p-3.5 rounded-full border shadow-2xl transition-all cursor-pointer flex items-center justify-center group ${
+        className={`fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 p-3 sm:p-3.5 rounded-full border shadow-2xl transition-all cursor-pointer flex items-center justify-center group ${
           fireMode
             ? 'bg-gradient-to-br from-[#ff1e00] via-[#ff5500] to-[#ffa600] text-black border-transparent shadow-[0_0_30px_rgba(255,85,0,0.95)] scale-110'
             : 'bg-[#150703]/90 backdrop-blur-md border-orange-500/40 text-[#ff6622] hover:border-orange-500 hover:text-white hover:scale-105 hover:shadow-[0_0_20px_rgba(255,100,0,0.6)]'

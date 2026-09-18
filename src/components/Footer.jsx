@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
             <div>
               <span className="font-bold text-white">UDITYA SINGH</span>
-              <span className="text-[#888] text-[11px] ml-2">AI ENGINEER • WEBSITES • APPS • SAP SD</span>
+              <span className="block sm:inline text-[#888] text-[10px] sm:text-[11px] sm:ml-2">AI ENGINEER • WEBSITES • APPS • SAP SD</span>
             </div>
           </div>
 
@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
 
         {/* Middle Spec Matrix */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-[11px] text-[#999]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-[11px] text-[#999]">
           <div>
             <div className="font-bold text-white uppercase mb-2">SYSTEM PROTOCOLS</div>
             <ul className="space-y-1">

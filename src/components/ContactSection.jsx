@@ -85,7 +85,7 @@ export default function ContactSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start font-mono">
         {/* Left Side: Direct Channels & Phone */}
         <div className="lg:col-span-5 space-y-4">
-          <div className="bg-[#121212] border border-[#303030] p-6 crosshair-corner shadow-md">
+          <div className="bg-[#121212] border border-[#303030] p-4 sm:p-6 crosshair-corner shadow-md">
             <h3 className="text-sm font-bold text-white uppercase mb-4 flex items-center gap-2">
               <Globe2 className="w-4 h-4 text-white" />
               VERIFIED CHANNELS & PROFILES
@@ -195,7 +195,7 @@ export default function ContactSection() {
           </div>
 
           {/* Direct Phone & Email Quick Copy Strip */}
-          <div className="bg-[#121212] border border-white/10 p-5 text-xs space-y-3">
+          <div className="bg-[#121212] border border-white/10 p-4 sm:p-5 text-xs space-y-3">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <span className="font-bold text-white flex items-center gap-1.5">
                 <Phone className="w-4 h-4 text-white" />
@@ -204,7 +204,7 @@ export default function ContactSection() {
               <span className="text-[#25d366] font-bold font-mono">ACTIVE</span>
             </div>
 
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-2">
               <span className="font-mono text-xs font-bold text-white">
                 {phoneNumber}
               </span>
@@ -235,11 +235,11 @@ export default function ContactSection() {
             </div>
 
             {/* Email */}
-            <div className="pt-2 border-t border-white/5 flex items-center justify-between">
+            <div className="pt-2 border-t border-white/5 flex flex-col xs:flex-row xs:items-center justify-between gap-2">
               <span className="text-[11px] text-[#888] truncate mr-2">{emailAddress}</span>
               <button
                 onClick={handleCopyEmail}
-                className="px-2.5 py-1 bg-[#1c1c1c] border border-white/20 hover:border-white flex items-center gap-1 text-[10px] cursor-pointer"
+                className="px-2.5 py-1 bg-[#1c1c1c] border border-white/20 hover:border-white flex items-center gap-1 text-[10px] cursor-pointer self-start xs:self-auto"
               >
                 {copiedEmail ? (
                   <>
@@ -258,7 +258,7 @@ export default function ContactSection() {
         </div>
 
         {/* Right Side: Priority Intake Form */}
-        <div className="lg:col-span-7 bg-[#121212] border border-[#303030] p-6 sm:p-8 crosshair-corner shadow-lg">
+        <div className="lg:col-span-7 bg-[#121212] border border-[#303030] p-4 sm:p-6 md:p-8 crosshair-corner shadow-lg">
           <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-6 text-xs">
             <span className="font-bold text-white flex items-center gap-2">
               <MessageSquare className="w-4 h-4 text-white" />

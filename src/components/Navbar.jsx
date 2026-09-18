@@ -51,14 +51,14 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode }) {
 
   return (
     <header className="sticky top-0 z-50 bg-[#0d0d0d]/90 backdrop-blur-md border-b border-white/10 text-xs font-neue select-none">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
         {/* Brand Logo (e.g. uditya.) */}
         <a 
           href="#" 
           onClick={() => audio.playClick(1400)}
           className="flex items-center gap-1.5 group cursor-pointer"
         >
-          <span className="font-bold text-xl sm:text-2xl tracking-tight text-white group-hover:text-white/80 transition-colors font-display lowercase">
+          <span className="font-bold text-lg sm:text-2xl tracking-tight text-white group-hover:text-white/80 transition-colors font-display lowercase">
             uditya
           </span>
           <span className={`w-2 h-2 rounded-full -mb-2 ${fireMode ? 'bg-[#ff5500] shadow-[0_0_12px_#ff5500] animate-ping' : 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]'}`}></span>
@@ -81,26 +81,29 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode }) {
         </nav>
 
         {/* Right CTA & Utilities */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
           {/* 🔥 FIRE MODE BUTTON */}
           <button
             onClick={handleToggleFire}
             title={fireMode ? "Extinguish Fire (Return to Dark Stealth)" : "Ignite Burning Fire Theme"}
-            className={`px-3 py-1 rounded-full border text-[10px] sm:text-[11px] font-mono tracking-wider transition-all flex items-center gap-1.5 cursor-pointer select-none ${
+            className={`px-2 sm:px-3 py-1 rounded-full border text-[10px] sm:text-[11px] font-mono tracking-wider transition-all flex items-center gap-1 sm:gap-1.5 cursor-pointer select-none ${
               fireMode
                 ? 'bg-gradient-to-r from-[#ff1e00] via-[#ff6a00] to-[#ffd000] text-black font-extrabold border-transparent shadow-[0_0_25px_rgba(255,85,0,0.95)] animate-pulse'
                 : 'bg-[#180803] border-orange-500/50 text-[#ff7733] hover:border-orange-500 hover:text-white hover:shadow-[0_0_15px_rgba(255,100,0,0.6)]'
             }`}
           >
-            <Flame className={`w-3.5 h-3.5 ${fireMode ? 'text-black animate-bounce' : 'text-[#ff5500]'}`} />
-            <span className="font-bold">{fireMode ? 'EXTINGUISH' : 'FIRE MODE'}</span>
+            <Flame className={`w-3.5 h-3.5 shrink-0 ${fireMode ? 'text-black animate-bounce' : 'text-[#ff5500]'}`} />
+            <span className="font-bold">
+              <span className="hidden sm:inline">{fireMode ? 'EXTINGUISH' : 'FIRE MODE'}</span>
+              <span className="sm:hidden">{fireMode ? 'OFF' : 'FIRE'}</span>
+            </span>
           </button>
 
           {/* Sound therapy toggle */}
           <button
             onClick={handleToggleSound}
             title="Audio Synthesizer & Tactile Click (midlife style)"
-            className={`px-2.5 py-1 rounded-full border text-[10px] font-mono tracking-wider transition-all cursor-pointer ${
+            className={`p-1.5 sm:px-2.5 sm:py-1 rounded-full border text-[10px] font-mono tracking-wider transition-all cursor-pointer ${
               soundEnabled
                 ? 'bg-white text-black border-white'
                 : 'border-white/15 text-[#aaa] hover:border-white'
@@ -108,11 +111,13 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode }) {
           >
             {soundEnabled ? (
               <span className="flex items-center gap-1 font-bold">
-                <Volume2 className="w-3 h-3 animate-pulse" /> ON
+                <Volume2 className="w-3.5 h-3.5 sm:w-3 sm:h-3 animate-pulse" /> 
+                <span className="hidden sm:inline">ON</span>
               </span>
             ) : (
               <span className="flex items-center gap-1">
-                <VolumeX className="w-3 h-3" /> OFF
+                <VolumeX className="w-3.5 h-3.5 sm:w-3 sm:h-3" /> 
+                <span className="hidden sm:inline">OFF</span>
               </span>
             )}
           </button>

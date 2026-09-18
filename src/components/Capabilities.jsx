@@ -166,7 +166,7 @@ export default function Capabilities() {
                 audio.playClick(1000 + disciplines.indexOf(item) * 100);
                 setActiveTab(item.id);
               }}
-              className={`p-3 text-left border transition-all flex flex-col justify-between min-h-[90px] cursor-pointer ${
+              className={`p-2 sm:p-3 text-left border transition-all flex flex-col justify-between min-h-[75px] sm:min-h-[90px] cursor-pointer ${
                 isActive
                   ? 'bg-white text-black border-white shadow-md'
                   : 'bg-[#141414] text-[#bbb] border-white/15 hover:border-white'
@@ -187,7 +187,7 @@ export default function Capabilities() {
       </div>
 
       {/* Active Discipline Detailed Card */}
-      <div className="bg-[#121212]/90 backdrop-blur-md border border-[#303030] p-6 sm:p-8 lg:p-10 relative crosshair-corner shadow-xl">
+      <div className="bg-[#121212]/90 backdrop-blur-md border border-[#303030] p-4 sm:p-6 md:p-8 lg:p-10 relative crosshair-corner shadow-xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Details */}
           <div className="lg:col-span-7 flex flex-col justify-between">
@@ -234,7 +234,7 @@ export default function Capabilities() {
           </div>
 
           {/* Right Column: Tech Stack & Telemetry Panel */}
-          <div className="lg:col-span-5 bg-[#0e0e0e] border border-white/10 p-5 font-mono">
+          <div className="lg:col-span-5 bg-[#0e0e0e] border border-white/10 p-4 sm:p-5 font-mono">
             <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-4 text-xs">
               <span className="font-bold text-white flex items-center gap-1.5">
                 <Code2 className="w-3.5 h-3.5 text-white" />

@@ -222,19 +222,19 @@ export default function WhatsAppSimulator() {
       </div>
 
       {/* Mode Switcher: WhatsApp Bot vs AI Phone Receptionist */}
-      <div className="flex items-center gap-2 mb-8 font-mono text-xs">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 mb-6 sm:mb-8 font-mono text-xs">
         <button
           onClick={() => {
             audio.playClick(1000);
             setActiveTab('whatsapp');
           }}
-          className={`px-4 py-2 border transition-all cursor-pointer font-bold flex items-center gap-2 ${
+          className={`px-3 sm:px-4 py-2 border transition-all cursor-pointer font-bold flex items-center justify-center gap-2 ${
             activeTab === 'whatsapp'
               ? 'bg-white text-black border-white shadow-sm'
               : 'border-white/20 text-[#aaa] hover:border-white'
           }`}
         >
-          <Smartphone className="w-4 h-4" />
+          <Smartphone className="w-4 h-4 shrink-0" />
           <span>WHATSAPP CLINIC BOT</span>
         </button>
 
@@ -243,13 +243,13 @@ export default function WhatsAppSimulator() {
             audio.playClick(1100);
             setActiveTab('call');
           }}
-          className={`px-4 py-2 border transition-all cursor-pointer font-bold flex items-center gap-2 ${
+          className={`px-3 sm:px-4 py-2 border transition-all cursor-pointer font-bold flex items-center justify-center gap-2 ${
             activeTab === 'call'
               ? 'bg-white text-black border-white shadow-sm'
               : 'border-white/20 text-[#aaa] hover:border-white'
           }`}
         >
-          <PhoneCall className="w-4 h-4" />
+          <PhoneCall className="w-4 h-4 shrink-0" />
           <span>AI CALL RECEPTIONIST (UK & CANADA)</span>
         </button>
       </div>
@@ -330,16 +330,16 @@ export default function WhatsAppSimulator() {
           </div>
 
           {/* Right Side: Tactile Smartphone Frame Simulator */}
-          <div className="lg:col-span-6 flex justify-center">
-            <div className="w-full max-w-[390px] bg-[#121212] rounded-[38px] p-3 shadow-2xl border-4 border-[#262626] dark:border-[#404040] relative">
+          <div className="lg:col-span-6 flex justify-center w-full">
+            <div className="w-full max-w-[390px] bg-[#121212] rounded-[28px] sm:rounded-[38px] p-2 sm:p-3 shadow-2xl border-2 sm:border-4 border-[#262626] dark:border-[#404040] relative mx-auto">
               {/* Speaker & camera pill */}
-              <div className="w-28 h-4 bg-[#1e1e1e] rounded-full mx-auto mb-2 flex items-center justify-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#111] border border-[#333]"></div>
-                <div className="w-8 h-1 rounded-full bg-[#2a2a2a]"></div>
+              <div className="w-20 sm:w-28 h-3.5 sm:h-4 bg-[#1e1e1e] rounded-full mx-auto mb-2 flex items-center justify-center gap-2">
+                <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#111] border border-[#333]"></div>
+                <div className="w-6 sm:w-8 h-1 rounded-full bg-[#2a2a2a]"></div>
               </div>
 
               {/* Inner Phone Screen */}
-              <div className="bg-[#efeae2] dark:bg-[#0b141a] rounded-[28px] overflow-hidden flex flex-col h-[520px] text-[#111b21] dark:text-[#e9edef] font-sans text-xs relative">
+              <div className="bg-[#efeae2] dark:bg-[#0b141a] rounded-[22px] sm:rounded-[28px] overflow-hidden flex flex-col h-[460px] sm:h-[520px] text-[#111b21] dark:text-[#e9edef] font-sans text-xs relative">
                 {/* WhatsApp App Header */}
                 <div className="bg-[#008069] dark:bg-[#202c33] text-white px-3 py-2.5 flex items-center justify-between shadow-sm select-none">
                   <div className="flex items-center gap-2.5">
@@ -453,26 +453,26 @@ export default function WhatsAppSimulator() {
             </div>
 
             {/* Region switchers */}
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 w-full sm:w-auto">
               <button
                 onClick={() => startCall('uk')}
-                className={`px-3 py-1.5 border text-xs font-bold transition-all cursor-pointer ${
+                className={`flex-1 sm:flex-initial px-3 py-1.5 border text-xs font-bold transition-all cursor-pointer text-center ${
                   activeRegion === 'uk'
                     ? 'bg-white text-black border-white'
                     : 'border-white/20 text-[#aaa] hover:border-white'
                 }`}
               >
-                🇬🇧 UK Clinic (London)
+                🇬🇧 UK (London)
               </button>
               <button
                 onClick={() => startCall('canada')}
-                className={`px-3 py-1.5 border text-xs font-bold transition-all cursor-pointer ${
+                className={`flex-1 sm:flex-initial px-3 py-1.5 border text-xs font-bold transition-all cursor-pointer text-center ${
                   activeRegion === 'canada'
                     ? 'bg-white text-black border-white'
                     : 'border-white/20 text-[#aaa] hover:border-white'
                 }`}
               >
-                🇨🇦 Canada Clinic (Toronto)
+                🇨🇦 Canada (Toronto)
               </button>
             </div>
           </div>

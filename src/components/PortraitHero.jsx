@@ -24,15 +24,15 @@ export default function PortraitHero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative min-h-[92vh] flex flex-col justify-between pt-6 pb-12 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto select-none overflow-hidden font-neue"
+      className="relative min-h-[92vh] flex flex-col justify-between pt-4 sm:pt-6 pb-8 sm:pb-12 px-3 sm:px-8 lg:px-12 max-w-7xl mx-auto select-none overflow-hidden font-neue"
     >
       {/* Soft Ambient Spotlight Glow behind the center portrait */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] sm:w-[620px] h-[480px] sm:h-[620px] bg-radial from-white/20 via-white/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] lg:w-[620px] h-[300px] sm:h-[500px] lg:h-[620px] bg-radial from-white/20 via-white/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
       {/* Main 3-Column Stage: Left Text | Center Photo | Right Text */}
-      <div className="my-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-6">
+      <div className="my-auto grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center py-4 sm:py-6">
         {/* LEFT COLUMN (4 cols): Introduction & Massive Title */}
-        <div className="lg:col-span-4 flex flex-col justify-center text-left space-y-4 z-10 order-2 lg:order-1">
+        <div className="lg:col-span-4 flex flex-col justify-center text-left space-y-3 sm:space-y-4 z-10 order-2 lg:order-1">
           {/* Top kicker */}
           <div className="flex items-center gap-2 font-mono text-xs sm:text-[13px] tracking-wider text-white font-bold uppercase">
             <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)] led-blink"></span>
@@ -40,20 +40,20 @@ export default function PortraitHero() {
           </div>
 
           {/* Massive Display Title in PP Neue Montreal */}
-          <h1 className="text-4xl sm:text-6xl lg:text-[58px] font-black tracking-[-0.04em] text-white uppercase leading-[0.92] font-display">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-[56px] font-black tracking-[-0.04em] text-white uppercase leading-[0.95] font-display">
             AI ENGINEER
-            <span className="block text-xl sm:text-3xl lg:text-[30px] text-white/90 font-normal tracking-normal mt-2">
+            <span className="block text-lg xs:text-xl sm:text-3xl lg:text-[28px] text-white/90 font-normal tracking-normal mt-1.5 sm:mt-2">
               & SAP SD SPECIALIST
             </span>
-            <span className="block text-xs sm:text-sm lg:text-[15px] text-white/70 font-mono tracking-widest uppercase mt-2">
+            <span className="block text-[11px] xs:text-xs sm:text-sm lg:text-[15px] text-white/70 font-mono tracking-widest uppercase mt-1.5 sm:mt-2">
               EXPERT WEBSITES • MOBILE APPS
             </span>
           </h1>
 
           {/* Specialized Clinic & Enterprise Highlight */}
-          <div className="flex items-center gap-2 font-mono text-xs text-[#27c93f] pt-1">
-            <span className="w-2 h-2 rounded-full bg-[#27c93f]"></span>
-            <span>UK 🇬🇧 & CANADA 🇨🇦 CLINIC AI VOICE & WHATSAPP</span>
+          <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-[#27c93f] pt-0.5">
+            <span className="w-2 h-2 rounded-full bg-[#27c93f] shrink-0"></span>
+            <span className="leading-snug">UK 🇬🇧 & CANADA 🇨🇦 CLINIC AI VOICE & WHATSAPP</span>
           </div>
 
           <p className="text-xs sm:text-sm text-[#bbb] font-mono leading-relaxed max-w-sm pt-1">
@@ -61,7 +61,7 @@ export default function PortraitHero() {
           </p>
 
           {/* Direct Phone / WhatsApp Pill */}
-          <div className="pt-2">
+          <div className="pt-1 sm:pt-2">
             <a
               href="https://wa.me/917665941949"
               target="_blank"
@@ -69,13 +69,13 @@ export default function PortraitHero() {
               onClick={() => audio.playConfirm()}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#25d366]/15 border border-[#25d366]/40 text-[#25d366] hover:bg-[#25d366] hover:text-white text-xs font-mono font-bold transition-all shadow-xs cursor-pointer"
             >
-              <Smartphone className="w-3.5 h-3.5" />
+              <Smartphone className="w-3.5 h-3.5 shrink-0" />
               <span>+91 7665941949</span>
             </a>
           </div>
 
           {/* Bottom Left Scroll Indicator */}
-          <div className="pt-6 hidden lg:flex items-center gap-2 text-xs font-mono text-[#888]">
+          <div className="pt-4 sm:pt-6 hidden lg:flex items-center gap-2 text-xs font-mono text-[#888]">
             <ArrowDown className="w-4 h-4 text-white animate-bounce" />
             <a href="#whatsapp-simulator" className="hover:text-white transition-colors uppercase tracking-wider">
               SCROLL TO TEST CLINIC CALLS & WHATSAPP
@@ -84,9 +84,9 @@ export default function PortraitHero() {
         </div>
 
         {/* CENTER COLUMN (4 cols): Clean Portrait with Spotlight Vignette */}
-        <div className="lg:col-span-4 flex justify-center items-center z-0 order-1 lg:order-2">
+        <div className="lg:col-span-4 flex justify-center items-center z-0 order-1 lg:order-2 my-2 sm:my-0">
           <div 
-            className="relative w-[280px] sm:w-[340px] md:w-[370px] aspect-[4/5.2] flex items-center justify-center transition-transform duration-200 ease-out"
+            className="relative w-[230px] xs:w-[260px] sm:w-[320px] md:w-[370px] max-w-[85vw] aspect-[4/5.2] flex items-center justify-center transition-transform duration-200 ease-out"
             style={{
               transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
               transformStyle: 'preserve-3d',
@@ -97,7 +97,7 @@ export default function PortraitHero() {
 
             {/* Seamless Portrait Image */}
             <div 
-              className="relative w-full h-full overflow-hidden rounded-[24px] shadow-2xl bg-[#090909] border border-white/20"
+              className="relative w-full h-full overflow-hidden rounded-[20px] sm:rounded-[24px] shadow-2xl bg-[#090909] border border-white/20"
               style={{
                 maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
                 WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
@@ -113,29 +113,29 @@ export default function PortraitHero() {
             </div>
 
             {/* Floating Badge */}
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#121212]/95 text-white px-4 py-1 rounded-full text-[11px] font-mono tracking-wider shadow-xl border border-white/20 flex items-center gap-1.5 whitespace-nowrap">
-              <span className="w-2 h-2 rounded-full bg-[#27c93f]"></span>
-              <span>WEBSITES • APPS • AI • SAP SD // GLOBAL</span>
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#121212]/95 text-white px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-[11px] font-mono tracking-wider shadow-xl border border-white/20 flex items-center gap-1.5 whitespace-nowrap">
+              <span className="w-2 h-2 rounded-full bg-[#27c93f] shrink-0"></span>
+              <span>WEBSITES • APPS • AI • SAP SD</span>
             </div>
           </div>
         </div>
 
         {/* RIGHT COLUMN (4 cols): Description & Action Pill Buttons */}
-        <div className="lg:col-span-4 flex flex-col justify-center text-left lg:text-right space-y-4 z-10 order-3">
-          <div className="text-[11px] sm:text-xs font-mono tracking-widest text-[#888] uppercase">
+        <div className="lg:col-span-4 flex flex-col justify-center text-left lg:text-right space-y-3 sm:space-y-4 z-10 order-3">
+          <div className="text-[10px] sm:text-xs font-mono tracking-widest text-[#888] uppercase">
             EXPERT WEBSITES • MOBILE APPS • CLINIC AI
           </div>
 
-          <p className="text-sm sm:text-base text-[#ccc] font-sans leading-relaxed">
+          <p className="text-xs sm:text-base text-[#ccc] font-sans leading-relaxed">
             Available for hire. Building expert modern websites, 3D WebGL interfaces, cross-platform mobile apps for iOS & Android, 24/7 AI Voice phone receptionists for clinics in the UK and Canada, and enterprise SAP SD Order-to-Cash automation.
           </p>
 
           {/* Action Pill Buttons */}
-          <div className="pt-4 flex flex-wrap items-center justify-start lg:justify-end gap-3 font-mono text-xs">
+          <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-start lg:justify-end gap-2.5 sm:gap-3 font-mono text-xs">
             <a
               href="#whatsapp-simulator"
               onClick={() => audio.playConfirm()}
-              className="px-6 py-3 rounded-full bg-white hover:bg-[#e0e0e0] text-black font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:scale-105 cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-white hover:bg-[#e0e0e0] text-black font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:scale-105 cursor-pointer flex items-center justify-center gap-1.5 text-center"
             >
               <span>Test Clinic & WA Bot</span>
             </a>
@@ -145,9 +145,9 @@ export default function PortraitHero() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => audio.playClick(1200)}
-              className="px-6 py-3 rounded-full bg-[#25d366] hover:bg-[#20ba59] text-white font-bold transition-all hover:scale-105 cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#25d366] hover:bg-[#20ba59] text-white font-bold transition-all hover:scale-105 cursor-pointer flex items-center justify-center gap-1.5 text-center"
             >
-              <Smartphone className="w-4 h-4" />
+              <Smartphone className="w-4 h-4 shrink-0" />
               <span>WhatsApp Me</span>
             </a>
           </div>

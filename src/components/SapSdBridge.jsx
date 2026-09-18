@@ -94,7 +94,7 @@ export default function SapSdBridge() {
       </div>
 
       {/* Interactive Pipeline Sequence Strip */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-3 mb-8 font-mono text-xs">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3 mb-6 sm:mb-8 font-mono text-xs">
         {pipelineStages.map((stage) => {
           const isSelected = activeStage.id === stage.id;
           const StageIcon = stage.icon;
@@ -105,29 +105,29 @@ export default function SapSdBridge() {
                 audio.playClick(1100);
                 setActiveStage(stage);
               }}
-              className={`p-4 text-left border transition-all relative flex flex-col justify-between cursor-pointer ${
+              className={`p-3 sm:p-4 text-left border transition-all relative flex flex-col justify-between cursor-pointer min-h-[90px] sm:min-h-[105px] ${
                 isSelected
                   ? 'bg-white text-black border-white shadow-lg'
                   : 'bg-[#141414] text-[#bbb] border-white/10 hover:border-white'
               }`}
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className={`text-[10px] font-bold px-1.5 py-0.5 border ${
+                <div className="flex items-center justify-between mb-2 sm:mb-3">
+                  <span className={`text-[9px] sm:text-[10px] font-bold px-1 sm:px-1.5 py-0.5 border ${
                     isSelected 
                       ? 'border-black text-black' 
                       : 'border-white/20 text-[#888]'
                   }`}>
                     STEP {stage.step}
                   </span>
-                  <StageIcon className={`w-4 h-4 ${isSelected ? 'text-black' : 'text-current'}`} />
+                  <StageIcon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isSelected ? 'text-black' : 'text-current'}`} />
                 </div>
-                <div className="font-bold text-xs leading-snug">{stage.title}</div>
-                <div className="text-[10px] text-[#888] mt-1 line-clamp-1">{stage.sub}</div>
+                <div className="font-bold text-[11px] sm:text-xs leading-snug">{stage.title}</div>
+                <div className="text-[9px] sm:text-[10px] text-[#888] mt-1 line-clamp-1">{stage.sub}</div>
               </div>
 
               {isSelected && (
-                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45"></div>
+                <div className="hidden md:block absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45"></div>
               )}
             </button>
           );
@@ -135,7 +135,7 @@ export default function SapSdBridge() {
       </div>
 
       {/* Selected Stage Detail & Code Payload Panel */}
-      <div className="bg-[#121212] border border-[#303030] p-6 sm:p-8 lg:p-10 crosshair-corner font-mono">
+      <div className="bg-[#121212] border border-[#303030] p-4 sm:p-6 md:p-8 lg:p-10 crosshair-corner font-mono">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Stage Explanation */}
           <div className="lg:col-span-6 space-y-4">

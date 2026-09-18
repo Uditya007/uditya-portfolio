@@ -119,13 +119,13 @@ export default function ChatbotTerminal() {
       {/* Terminal Window Container */}
       <div className="bg-[#121212] border border-[#333] shadow-2xl overflow-hidden font-mono text-xs crosshair-corner">
         {/* Terminal Header Bar */}
-        <div className="bg-[#1c1c1c] px-4 py-2.5 border-b border-[#262626] flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
-            <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
-            <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
-            <span className="ml-2 text-[11px] text-[#888] font-bold tracking-wider">
-              bash — uditya-ai@clinic-and-erp-node:~$
+        <div className="bg-[#1c1c1c] px-3 sm:px-4 py-2 sm:py-2.5 border-b border-[#262626] flex items-center justify-between">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-hidden">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56] shrink-0"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e] shrink-0"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f] shrink-0"></div>
+            <span className="ml-1 sm:ml-2 text-[10px] sm:text-[11px] text-[#888] font-bold tracking-wider truncate max-w-[140px] xs:max-w-[200px] sm:max-w-none">
+              bash — uditya-ai@node:~$
             </span>
           </div>
 
@@ -134,22 +134,22 @@ export default function ChatbotTerminal() {
               audio.playClick(800);
               setLogs(initialLogs);
             }}
-            className="text-[#888] hover:text-white text-[10px] flex items-center gap-1 cursor-pointer transition-colors"
+            className="text-[#888] hover:text-white text-[10px] flex items-center gap-1 cursor-pointer transition-colors shrink-0 ml-2"
             title="Clear terminal"
           >
             <Trash2 className="w-3 h-3" />
-            CLEAR
+            <span>CLEAR</span>
           </button>
         </div>
 
         {/* Quick Command Action Pills */}
-        <div className="bg-[#181818] px-4 py-2 border-b border-[#262626] flex flex-wrap items-center gap-2 text-[11px]">
-          <span className="text-[#666] text-[10px]">QUICK COMMANDS:</span>
+        <div className="bg-[#181818] px-3 sm:px-4 py-2 border-b border-[#262626] flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px]">
+          <span className="text-[#666] text-[9px] sm:text-[10px] shrink-0">QUICK:</span>
           {['web', 'apps', 'clinics', 'skills', 'sap-sd', 'whatsapp', 'contact', 'help'].map((cmd) => (
             <button
               key={cmd}
               onClick={() => handleCommand(cmd)}
-              className="px-2.5 py-0.5 bg-[#242424] hover:bg-white text-[#ddd] hover:text-black border border-[#333] transition-colors cursor-pointer text-[10px] font-bold"
+              className="px-2 sm:px-2.5 py-0.5 bg-[#242424] hover:bg-white text-[#ddd] hover:text-black border border-[#333] transition-colors cursor-pointer text-[10px] font-bold"
             >
               /{cmd}
             </button>
@@ -157,7 +157,7 @@ export default function ChatbotTerminal() {
         </div>
 
         {/* Console Log Area */}
-        <div className="p-4 sm:p-6 h-[400px] overflow-y-auto space-y-3.5 text-[#ddd] font-mono leading-relaxed selection:bg-white selection:text-black">
+        <div className="p-3 sm:p-6 h-[320px] sm:h-[400px] overflow-y-auto space-y-3 sm:space-y-3.5 text-[#ddd] font-mono leading-relaxed selection:bg-white selection:text-black text-[11px] sm:text-xs">
           {logs.map((log, i) => (
             <div key={i} className="space-y-1">
               {log.type === 'user' ? (

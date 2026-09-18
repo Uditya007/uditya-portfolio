@@ -145,7 +145,7 @@ export default function Projects() {
           return (
             <div
               key={p.id}
-              className="bg-[#121212] border border-[#303030] p-6 sm:p-8 flex flex-col justify-between crosshair-corner hover:border-white transition-all group shadow-md"
+              className="bg-[#121212] border border-[#303030] p-4 sm:p-6 md:p-8 flex flex-col justify-between crosshair-corner hover:border-white transition-all group shadow-md"
             >
               <div>
                 {/* Meta header */}
@@ -186,7 +186,7 @@ export default function Projects() {
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+              <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs">
                 <a
                   href={p.liveUrl}
                   onClick={() => audio.playConfirm()}
