@@ -8,6 +8,9 @@ import SapSdBridge from './components/SapSdBridge';
 import Projects from './components/Projects';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import FireCanvas from './components/FireCanvas';
+import { audio } from './components/AudioEngine';
+import { Flame } from 'lucide-react';
 
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -16,6 +19,7 @@ export default function App() {
     return true; // Sleek monochrome Dark theme
   });
 
+  const [fireMode, setFireMode] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -23,6 +27,24 @@ export default function App() {
     document.documentElement.classList.add('dark');
     localStorage.setItem('uditya_theme', 'dark');
   }, [isDark]);
+
+  useEffect(() => {
+    if (fireMode) {
+      document.documentElement.classList.add('theme-fire');
+    } else {
+      document.documentElement.classList.remove('theme-fire');
+    }
+  }, [fireMode]);
+
+  const handleToggleFire = () => {
+    const next = !fireMode;
+    setFireMode(next);
+    if (next) {
+      audio.playIgnite();
+    } else {
+      audio.playExtinguish();
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,16 +59,43 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#080808] text-[#f5f5f5] bg-grid-tech selection:bg-white selection:text-black transition-colors duration-200">
-      {/* Precision Top Scroll Progress Line in Crisp White */}
+    <div className={`relative min-h-screen ${
+      fireMode ? 'bg-[#0a0302] text-[#fff5ee]' : 'bg-[#080808] text-[#f5f5f5]'
+    } bg-grid-tech transition-colors duration-500`}>
+      {/* 60 FPS Procedural Burning Fire Canvas & Rising Embers */}
+      <FireCanvas active={fireMode} />
+
+      {/* Precision Top Scroll Progress Line (White in normal, Molten Plasma in Fire Mode) */}
       <div 
-        className="fixed top-0 left-0 h-[2px] bg-white shadow-[0_0_10px_rgba(255,255,255,0.9)] z-50 transition-all duration-75"
+        className={`fixed top-0 left-0 z-50 transition-all duration-75 ${
+          fireMode
+            ? 'h-[3px] bg-gradient-to-r from-[#ff1e00] via-[#ff6a00] to-[#ffd000] shadow-[0_0_18px_#ff4500]'
+            : 'h-[2px] bg-white shadow-[0_0_10px_rgba(255,255,255,0.9)]'
+        }`}
         style={{ width: `${scrollProgress}%` }}
       />
 
+      {/* Floating Quick Fire Ignition Button */}
+      <button
+        onClick={handleToggleFire}
+        title={fireMode ? "Extinguish Fire Theme (Return to Dark Stealth)" : "Ignite Burning Fire Theme"}
+        className={`fixed bottom-6 right-6 z-50 p-3.5 rounded-full border shadow-2xl transition-all cursor-pointer flex items-center justify-center group ${
+          fireMode
+            ? 'bg-gradient-to-br from-[#ff1e00] via-[#ff5500] to-[#ffa600] text-black border-transparent shadow-[0_0_30px_rgba(255,85,0,0.95)] scale-110'
+            : 'bg-[#150703]/90 backdrop-blur-md border-orange-500/40 text-[#ff6622] hover:border-orange-500 hover:text-white hover:scale-105 hover:shadow-[0_0_20px_rgba(255,100,0,0.6)]'
+        }`}
+      >
+        <Flame className={`w-5 h-5 ${fireMode ? 'animate-bounce text-black' : 'text-[#ff5500] group-hover:animate-pulse'}`} />
+      </button>
+
       {/* Main Content Flow */}
       <div className="relative z-10 flex flex-col">
-        <Navbar isDark={isDark} setIsDark={setIsDark} />
+        <Navbar 
+          isDark={isDark} 
+          setIsDark={setIsDark} 
+          fireMode={fireMode} 
+          setFireMode={setFireMode} 
+        />
         
         <main className="flex-1">
           {/* 1. Portrait Hero: Clean Centered Portrait, No 3D models, matching user laptop screenshot */}

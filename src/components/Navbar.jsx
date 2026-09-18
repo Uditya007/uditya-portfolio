@@ -7,12 +7,13 @@ import {
   Menu, 
   X,
   ArrowRight,
-  Smartphone
+  Smartphone,
+  Flame
 } from 'lucide-react';
 import { Github, Linkedin, Instagram } from './SocialIcons';
 import { audio } from './AudioEngine';
 
-export default function Navbar({ isDark, setIsDark }) {
+export default function Navbar({ isDark, setIsDark, fireMode, setFireMode }) {
   const [soundEnabled, setSoundEnabled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -25,6 +26,16 @@ export default function Navbar({ isDark, setIsDark }) {
     } else {
       audio.toggleAmbient(false);
       audio.toggleMute();
+    }
+  };
+
+  const handleToggleFire = () => {
+    const nextFire = !fireMode;
+    setFireMode(nextFire);
+    if (nextFire) {
+      audio.playIgnite();
+    } else {
+      audio.playExtinguish();
     }
   };
 
@@ -50,7 +61,7 @@ export default function Navbar({ isDark, setIsDark }) {
           <span className="font-bold text-xl sm:text-2xl tracking-tight text-white group-hover:text-white/80 transition-colors font-display lowercase">
             uditya
           </span>
-          <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] -mb-2"></span>
+          <span className={`w-2 h-2 rounded-full -mb-2 ${fireMode ? 'bg-[#ff5500] shadow-[0_0_12px_#ff5500] animate-ping' : 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]'}`}></span>
         </a>
 
         {/* Center Desktop Links */}
@@ -60,7 +71,9 @@ export default function Navbar({ isDark, setIsDark }) {
               key={link.label}
               href={link.href}
               onClick={() => audio.playClick(1100)}
-              className="text-[#999] hover:text-white transition-colors text-xs font-medium tracking-wide relative py-1"
+              className={`transition-colors text-xs font-medium tracking-wide relative py-1 ${
+                fireMode ? 'text-[#ffb380] hover:text-white' : 'text-[#999] hover:text-white'
+              }`}
             >
               {link.label}
             </a>
@@ -69,6 +82,20 @@ export default function Navbar({ isDark, setIsDark }) {
 
         {/* Right CTA & Utilities */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* 🔥 FIRE MODE BUTTON */}
+          <button
+            onClick={handleToggleFire}
+            title={fireMode ? "Extinguish Fire (Return to Dark Stealth)" : "Ignite Burning Fire Theme"}
+            className={`px-3 py-1 rounded-full border text-[10px] sm:text-[11px] font-mono tracking-wider transition-all flex items-center gap-1.5 cursor-pointer select-none ${
+              fireMode
+                ? 'bg-gradient-to-r from-[#ff1e00] via-[#ff6a00] to-[#ffd000] text-black font-extrabold border-transparent shadow-[0_0_25px_rgba(255,85,0,0.95)] animate-pulse'
+                : 'bg-[#180803] border-orange-500/50 text-[#ff7733] hover:border-orange-500 hover:text-white hover:shadow-[0_0_15px_rgba(255,100,0,0.6)]'
+            }`}
+          >
+            <Flame className={`w-3.5 h-3.5 ${fireMode ? 'text-black animate-bounce' : 'text-[#ff5500]'}`} />
+            <span className="font-bold">{fireMode ? 'EXTINGUISH' : 'FIRE MODE'}</span>
+          </button>
+
           {/* Sound therapy toggle */}
           <button
             onClick={handleToggleSound}
@@ -161,6 +188,22 @@ export default function Navbar({ isDark, setIsDark }) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-white/10 bg-[#0d0d0d] px-6 py-4 flex flex-col gap-3 font-neue">
+          {/* Mobile Fire Mode Toggle */}
+          <button
+            onClick={() => {
+              handleToggleFire();
+              setMobileMenuOpen(false);
+            }}
+            className={`w-full py-2.5 rounded-full border text-xs font-mono font-bold tracking-wider flex items-center justify-center gap-2 ${
+              fireMode
+                ? 'bg-gradient-to-r from-[#ff1e00] via-[#ff6a00] to-[#ffd000] text-black shadow-[0_0_20px_rgba(255,85,0,0.9)]'
+                : 'bg-[#180803] border-orange-500/50 text-[#ff7733]'
+            }`}
+          >
+            <Flame className="w-4 h-4" />
+            <span>{fireMode ? 'EXTINGUISH FIRE THEME' : 'IGNITE FIRE THEME'}</span>
+          </button>
+
           {navLinks.map((link) => (
             <a
               key={link.label}
