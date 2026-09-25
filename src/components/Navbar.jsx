@@ -63,7 +63,7 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode }) {
           </span>
           <span className={`w-2 h-2 rounded-full -mb-2 ${fireMode ? 'bg-[#ff5500] shadow-[0_0_12px_#ff5500] animate-ping' : 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]'}`}></span>
           <span className="hidden lg:inline-block text-[10px] font-mono tracking-widest text-[#888] border-l border-white/20 pl-2.5 ml-1 uppercase">
-            WEBSITE & APP DEVELOPER
+            AI CHATBOTS • CLINIC AGENTS • WEB & APPS
           </span>
         </a>
 

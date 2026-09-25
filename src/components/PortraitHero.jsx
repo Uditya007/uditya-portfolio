@@ -5,6 +5,7 @@ import {
   Layers, 
   Stethoscope, 
   Globe,
+  Bot,
   Radio,
   Zap,
   Activity
@@ -13,11 +14,11 @@ import { Github, Linkedin, Instagram } from './SocialIcons';
 import { audio } from './AudioEngine';
 
 const ROLES = [
-  'EXPERT WEBSITE DEVELOPER (REACT 19 / NEXT.JS)',
-  'CROSS-PLATFORM APP DEVELOPER (iOS & ANDROID)',
-  'CLINIC AI VOICE RECEPTIONIST (UK 🇬🇧 & CANADA 🇨🇦)',
+  'INTELLIGENT AI CHATBOTS & RAG AGENTS',
+  'CLINIC AI VOICE RECEPTIONISTS (UK 🇬🇧 & CANADA 🇨🇦)',
+  'EXPERT WEBSITE DEVELOPMENT (REACT 19 / NEXT.JS)',
+  'CROSS-PLATFORM APP DEVELOPMENT (iOS & ANDROID)',
   'SAP SD S/4HANA (ORDER-TO-CASH) SPECIALIST',
-  'AUTONOMOUS AGENTS & RAG ARCHITECT',
 ];
 
 export default function PortraitHero() {
@@ -30,7 +31,7 @@ export default function PortraitHero() {
   // Typewriter cyber role switcher
   useEffect(() => {
     const current = ROLES[roleIndex];
-    const speed = isDeleting ? 30 : 65;
+    const speed = isDeleting ? 28 : 55;
 
     const timer = setTimeout(() => {
       if (!isDeleting) {
@@ -76,14 +77,14 @@ export default function PortraitHero() {
       {/* Main 2-Column Hero Stage */}
       <div className="my-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center py-4 sm:py-6">
         
-        {/* LEFT COLUMN (7 cols): Identity, Massive Typography & Core Action */}
-        <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-4 sm:space-y-5 z-10">
+        {/* LEFT COLUMN (7 cols): Identity, Refined Typography & Core Action */}
+        <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-4 sm:space-y-4.5 z-10">
           
           {/* Top Kicker Status Bar with Live Signal Wave */}
           <div className="flex flex-wrap items-center gap-2 font-mono text-xs sm:text-[13px] tracking-wider text-white font-bold uppercase">
             <span className="w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)] led-blink"></span>
             <span>HI, I'M UDITYA SINGH</span>
-            <span className="text-[#888]">// WEBSITE & APP DEVELOPER</span>
+            <span className="text-[#888]">// BANGALORE LAB</span>
             
             <div className="flex items-center gap-1.5 px-2 py-0.5 bg-[#27c93f]/10 border border-[#27c93f]/30 font-mono text-[10px] text-[#27c93f] ml-auto sm:ml-0 rounded-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#27c93f] animate-ping" />
@@ -91,20 +92,20 @@ export default function PortraitHero() {
             </div>
           </div>
 
-          {/* Massive Display Title: WEBSITE DEVELOPER & APP DEVELOPER */}
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-[58px] font-black tracking-[-0.04em] text-white uppercase leading-[0.95] font-display">
-            WEBSITE DEVELOPER
-            <span className="block text-2xl xs:text-3xl sm:text-4xl lg:text-[46px] text-white font-black tracking-tight mt-1 sm:mt-1.5">
-              & APP DEVELOPER
+          {/* Main Headline: Refined, Smaller, Exact Hierarchy */}
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-[42px] font-black tracking-[-0.03em] text-white uppercase leading-[1.08] font-display">
+            AI CHATBOTS & CLINIC AGENTS
+            <span className="block text-xl xs:text-2xl sm:text-3xl lg:text-[32px] text-white font-bold tracking-tight mt-1 sm:mt-1.5">
+              WEBSITE & APP DEVELOPMENT
             </span>
-            <span className="block text-base xs:text-lg sm:text-xl lg:text-[24px] text-white/80 font-normal tracking-normal mt-2">
+            <span className="block text-sm xs:text-base sm:text-lg lg:text-[18px] text-[#aaa] font-medium tracking-normal mt-1.5 sm:mt-2">
               AI ENGINEER • SAP SD SPECIALIST
             </span>
             
             {/* Animated Cyber Typewriter Role Line */}
-            <span className="block text-xs sm:text-sm lg:text-[15px] text-white/80 font-mono tracking-widest uppercase mt-3 h-6 flex items-center gap-1">
+            <span className="block text-xs sm:text-sm lg:text-[14px] text-white/80 font-mono tracking-widest uppercase mt-3 h-6 flex items-center gap-1">
               <span className="text-white font-bold">{displayText}</span>
-              <span className="inline-block w-2 h-4 bg-white animate-pulse" />
+              <span className="inline-block w-1.5 h-3.5 bg-white animate-pulse" />
             </span>
           </h1>
 
@@ -114,12 +115,12 @@ export default function PortraitHero() {
             <span className="font-bold">UK 🇬🇧 & CANADA 🇨🇦 CLINIC AI VOICE & WHATSAPP</span>
           </div>
 
-          <p className="text-xs sm:text-base text-[#ccc] font-sans leading-relaxed max-w-xl">
-            Specialized Website Developer and Mobile App Developer crafting high-performance modern web platforms, iOS & Android applications, 24/7 AI Voice receptionists & WhatsApp patient desks for clinics in London & Toronto, alongside enterprise SAP SD Order-to-Cash automation.
+          <p className="text-xs sm:text-sm text-[#ccc] font-sans leading-relaxed max-w-xl">
+            Specializing in autonomous AI Chatbots, Clinic AI Voice Agents (UK & Canada), high-performance Website Development, and Cross-Platform App Development (iOS & Android), bridged with enterprise SAP SD ERP workflows.
           </p>
 
           {/* Action Buttons */}
-          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 font-mono text-xs">
+          <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 font-mono text-xs">
             <a
               href="#whatsapp-simulator"
               onClick={() => audio.playConfirm()}
@@ -190,7 +191,7 @@ export default function PortraitHero() {
                   UDITYA SINGH
                   <span className="text-[10px] font-mono text-[#888] font-normal">[ING-01]</span>
                 </h3>
-                <p className="text-xs text-[#aaa]">WEBSITE DEVELOPER • APP DEVELOPER • AI ARCHITECT</p>
+                <p className="text-xs text-[#aaa]">AI CHATBOTS • CLINIC AGENTS • WEB & APPS • SAP SD</p>
                 <p className="text-[11px] text-[#25d366] font-mono font-bold mt-0.5">WhatsApp / Phone: +91 7665941949</p>
               </div>
             </div>
@@ -199,25 +200,17 @@ export default function PortraitHero() {
             <div className="space-y-2.5 text-xs border-t border-b border-white/10 py-4">
               <div className="flex justify-between items-center text-[#bbb] group/row hover:text-white transition-colors">
                 <span className="text-[#888] flex items-center gap-1.5 group-hover/row:text-white transition-colors">
-                  <Globe className="w-3.5 h-3.5 text-white" />
-                  WEBSITE DEVELOPER
+                  <Bot className="w-3.5 h-3.5 text-white" />
+                  AI CHATBOTS
                 </span>
-                <span className="text-white font-bold">React 19 • Next.js • 3D WebGL</span>
+                <span className="text-white font-bold">LangGraph • Multi-Agents • RAG</span>
               </div>
 
-              <div className="flex justify-between items-center text-[#bbb] group/row hover:text-white transition-colors">
-                <span className="text-[#888] flex items-center gap-1.5 group-hover/row:text-white transition-colors">
-                  <Smartphone className="w-3.5 h-3.5 text-white" />
-                  APP DEVELOPER
-                </span>
-                <span className="text-white font-bold">iOS & Android (React Native)</span>
-              </div>
-
-              {/* Clinic AI with Live Audio Visualizer Bars */}
+              {/* Clinic AI Agents with Live Audio Visualizer Bars */}
               <div className="flex justify-between items-center text-[#bbb] group/row hover:text-white transition-colors">
                 <span className="text-[#888] flex items-center gap-1.5 group-hover/row:text-white transition-colors">
                   <Stethoscope className="w-3.5 h-3.5 text-white" />
-                  CLINIC AI VOICE
+                  CLINIC AGENTS
                 </span>
                 <div className="flex items-center gap-2">
                   {/* Dancing Waveform EQ Bars */}
@@ -229,6 +222,22 @@ export default function PortraitHero() {
                   </div>
                   <span className="text-white font-bold">UK 🇬🇧 & CA 🇨🇦</span>
                 </div>
+              </div>
+
+              <div className="flex justify-between items-center text-[#bbb] group/row hover:text-white transition-colors">
+                <span className="text-[#888] flex items-center gap-1.5 group-hover/row:text-white transition-colors">
+                  <Globe className="w-3.5 h-3.5 text-white" />
+                  WEBSITE DEV
+                </span>
+                <span className="text-white font-bold">React 19 • Next.js • 3D</span>
+              </div>
+
+              <div className="flex justify-between items-center text-[#bbb] group/row hover:text-white transition-colors">
+                <span className="text-[#888] flex items-center gap-1.5 group-hover/row:text-white transition-colors">
+                  <Smartphone className="w-3.5 h-3.5 text-white" />
+                  APP DEV
+                </span>
+                <span className="text-white font-bold">iOS & Android (Expo/RN)</span>
               </div>
 
               <div className="flex justify-between items-center text-[#bbb] group/row hover:text-white transition-colors">

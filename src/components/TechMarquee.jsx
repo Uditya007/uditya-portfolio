@@ -13,11 +13,11 @@ import {
 } from 'lucide-react';
 
 const marqueeItems = [
-  { icon: Globe, label: 'EXPERT WEBSITE DEVELOPER', tag: 'REACT 19 / NEXT.JS / 3D' },
-  { icon: Smartphone, label: 'MOBILE APP DEVELOPER', tag: 'iOS & ANDROID (REACT NATIVE)' },
-  { icon: Stethoscope, label: 'CLINIC AI VOICE RECEPTIONIST', tag: 'UK 🇬🇧 & CANADA 🇨🇦' },
+  { icon: Bot, label: 'AI CHATBOTS & RAG', tag: 'LANGGRAPH / MULTI-AGENT' },
+  { icon: Stethoscope, label: 'CLINIC AI AGENTS', tag: 'UK 🇬🇧 & CANADA 🇨🇦' },
+  { icon: Globe, label: 'WEBSITE DEVELOPMENT', tag: 'REACT 19 / NEXT.JS / 3D' },
+  { icon: Smartphone, label: 'APP DEVELOPMENT', tag: 'iOS & ANDROID (REACT NATIVE)' },
   { icon: Layers, label: 'SAP SD ENTERPRISE ERP', tag: 'ORDER-TO-CASH (O2C)' },
-  { icon: Bot, label: 'AUTONOMOUS AI AGENTS', tag: 'LANGGRAPH & RAG' },
   { icon: Smartphone, label: 'WHATSAPP CLOUD API', tag: '98% OPEN RATE FUNNELS' },
   { icon: Sparkles, label: '3D WEBGL & SHADERS', tag: '60 FPS LOCKED' },
   { icon: Cpu, label: 'FASTAPI & LLMOPS', tag: '<140ms FIRST TOKEN' },
