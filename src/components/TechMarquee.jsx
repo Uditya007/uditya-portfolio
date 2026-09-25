@@ -13,8 +13,8 @@ import {
 } from 'lucide-react';
 
 const marqueeItems = [
-  { icon: Globe, label: 'EXPERT WEBSITES', tag: 'REACT 19 / NEXT.JS' },
-  { icon: Smartphone, label: 'MOBILE APPS', tag: 'iOS & ANDROID (REACT NATIVE)' },
+  { icon: Globe, label: 'EXPERT WEBSITE DEVELOPER', tag: 'REACT 19 / NEXT.JS / 3D' },
+  { icon: Smartphone, label: 'MOBILE APP DEVELOPER', tag: 'iOS & ANDROID (REACT NATIVE)' },
   { icon: Stethoscope, label: 'CLINIC AI VOICE RECEPTIONIST', tag: 'UK 🇬🇧 & CANADA 🇨🇦' },
   { icon: Layers, label: 'SAP SD ENTERPRISE ERP', tag: 'ORDER-TO-CASH (O2C)' },
   { icon: Bot, label: 'AUTONOMOUS AI AGENTS', tag: 'LANGGRAPH & RAG' },

@@ -56,12 +56,15 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode }) {
         <a 
           href="#" 
           onClick={() => audio.playClick(1400)}
-          className="flex items-center gap-1.5 group cursor-pointer"
+          className="flex items-center gap-2 group cursor-pointer"
         >
           <span className="font-bold text-lg sm:text-2xl tracking-tight text-white group-hover:text-white/80 transition-colors font-display lowercase">
             uditya
           </span>
           <span className={`w-2 h-2 rounded-full -mb-2 ${fireMode ? 'bg-[#ff5500] shadow-[0_0_12px_#ff5500] animate-ping' : 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]'}`}></span>
+          <span className="hidden lg:inline-block text-[10px] font-mono tracking-widest text-[#888] border-l border-white/20 pl-2.5 ml-1 uppercase">
+            WEBSITE & APP DEVELOPER
+          </span>
         </a>
 
         {/* Center Desktop Links */}

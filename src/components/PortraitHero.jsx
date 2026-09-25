@@ -13,11 +13,11 @@ import { Github, Linkedin, Instagram } from './SocialIcons';
 import { audio } from './AudioEngine';
 
 const ROLES = [
-  'EXPERT WEBSITES • 3D WEBGL',
-  'MOBILE APPS • iOS & ANDROID',
-  'CLINIC AI VOICE (UK 🇬🇧 & CANADA 🇨🇦)',
-  'SAP SD S/4HANA (ORDER-TO-CASH)',
-  'AUTONOMOUS AGENTS & RAG',
+  'EXPERT WEBSITE DEVELOPER (REACT 19 / NEXT.JS)',
+  'CROSS-PLATFORM APP DEVELOPER (iOS & ANDROID)',
+  'CLINIC AI VOICE RECEPTIONIST (UK 🇬🇧 & CANADA 🇨🇦)',
+  'SAP SD S/4HANA (ORDER-TO-CASH) SPECIALIST',
+  'AUTONOMOUS AGENTS & RAG ARCHITECT',
 ];
 
 export default function PortraitHero() {
@@ -83,7 +83,7 @@ export default function PortraitHero() {
           <div className="flex flex-wrap items-center gap-2 font-mono text-xs sm:text-[13px] tracking-wider text-white font-bold uppercase">
             <span className="w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)] led-blink"></span>
             <span>HI, I'M UDITYA SINGH</span>
-            <span className="text-[#888]">// BANGALORE LAB</span>
+            <span className="text-[#888]">// WEBSITE & APP DEVELOPER</span>
             
             <div className="flex items-center gap-1.5 px-2 py-0.5 bg-[#27c93f]/10 border border-[#27c93f]/30 font-mono text-[10px] text-[#27c93f] ml-auto sm:ml-0 rounded-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#27c93f] animate-ping" />
@@ -91,15 +91,18 @@ export default function PortraitHero() {
             </div>
           </div>
 
-          {/* Massive Display Title */}
+          {/* Massive Display Title: WEBSITE DEVELOPER & APP DEVELOPER */}
           <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-[58px] font-black tracking-[-0.04em] text-white uppercase leading-[0.95] font-display">
-            AI ENGINEER
-            <span className="block text-xl xs:text-2xl sm:text-3xl lg:text-[32px] text-white/90 font-normal tracking-normal mt-2">
-              & SAP SD SPECIALIST
+            WEBSITE DEVELOPER
+            <span className="block text-2xl xs:text-3xl sm:text-4xl lg:text-[46px] text-white font-black tracking-tight mt-1 sm:mt-1.5">
+              & APP DEVELOPER
+            </span>
+            <span className="block text-base xs:text-lg sm:text-xl lg:text-[24px] text-white/80 font-normal tracking-normal mt-2">
+              AI ENGINEER • SAP SD SPECIALIST
             </span>
             
             {/* Animated Cyber Typewriter Role Line */}
-            <span className="block text-xs sm:text-sm lg:text-[15px] text-white/80 font-mono tracking-widest uppercase mt-2 h-6 flex items-center gap-1">
+            <span className="block text-xs sm:text-sm lg:text-[15px] text-white/80 font-mono tracking-widest uppercase mt-3 h-6 flex items-center gap-1">
               <span className="text-white font-bold">{displayText}</span>
               <span className="inline-block w-2 h-4 bg-white animate-pulse" />
             </span>
@@ -112,7 +115,7 @@ export default function PortraitHero() {
           </div>
 
           <p className="text-xs sm:text-base text-[#ccc] font-sans leading-relaxed max-w-xl">
-            Engineering high-performance modern websites, 3D WebGL interfaces, cross-platform mobile apps (iOS & Android), 24/7 AI Voice receptionists & WhatsApp patient desks for clinics in London & Toronto, alongside enterprise SAP SD Order-to-Cash automation.
+            Specialized Website Developer and Mobile App Developer crafting high-performance modern web platforms, iOS & Android applications, 24/7 AI Voice receptionists & WhatsApp patient desks for clinics in London & Toronto, alongside enterprise SAP SD Order-to-Cash automation.
           </p>
 
           {/* Action Buttons */}
@@ -187,7 +190,7 @@ export default function PortraitHero() {
                   UDITYA SINGH
                   <span className="text-[10px] font-mono text-[#888] font-normal">[ING-01]</span>
                 </h3>
-                <p className="text-xs text-[#aaa]">AI ARCHITECT • WEB & APP DEV • SAP SD</p>
+                <p className="text-xs text-[#aaa]">WEBSITE DEVELOPER • APP DEVELOPER • AI ARCHITECT</p>
                 <p className="text-[11px] text-[#25d366] font-mono font-bold mt-0.5">WhatsApp / Phone: +91 7665941949</p>
               </div>
             </div>
@@ -197,7 +200,7 @@ export default function PortraitHero() {
               <div className="flex justify-between items-center text-[#bbb] group/row hover:text-white transition-colors">
                 <span className="text-[#888] flex items-center gap-1.5 group-hover/row:text-white transition-colors">
                   <Globe className="w-3.5 h-3.5 text-white" />
-                  EXPERT WEBSITES
+                  WEBSITE DEVELOPER
                 </span>
                 <span className="text-white font-bold">React 19 • Next.js • 3D WebGL</span>
               </div>
@@ -205,7 +208,7 @@ export default function PortraitHero() {
               <div className="flex justify-between items-center text-[#bbb] group/row hover:text-white transition-colors">
                 <span className="text-[#888] flex items-center gap-1.5 group-hover/row:text-white transition-colors">
                   <Smartphone className="w-3.5 h-3.5 text-white" />
-                  MOBILE APPS
+                  APP DEVELOPER
                 </span>
                 <span className="text-white font-bold">iOS & Android (React Native)</span>
               </div>

@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
             <div>
               <span className="font-bold text-white">UDITYA SINGH</span>
-              <span className="block sm:inline text-[#888] text-[10px] sm:text-[11px] sm:ml-2">AI ENGINEER • WEBSITES • APPS • SAP SD</span>
+              <span className="block sm:inline text-[#888] text-[10px] sm:text-[11px] sm:ml-2">WEBSITE DEVELOPER • APP DEVELOPER • AI ENGINEER • SAP SD</span>
             </div>
           </div>
 
@@ -38,9 +38,9 @@ export default function Footer() {
           <div>
             <div className="font-bold text-white uppercase mb-2">SYSTEM PROTOCOLS</div>
             <ul className="space-y-1">
-              <li>• Expert Modern Websites & 3D WebGL</li>
-              <li>• Cross-Platform iOS & Android Apps</li>
-              <li>• Clinic AI Voice Call Receptionists</li>
+              <li>• Expert Website Development (React 19 / Next.js)</li>
+              <li>• Mobile App Development (iOS & Android)</li>
+              <li>• Clinic AI Voice Receptionists (UK & Canada)</li>
               <li>• Meta WhatsApp Cloud API Funnels</li>
               <li>• SAP SD S/4HANA Order-to-Cash</li>
             </ul>
