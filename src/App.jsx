@@ -9,6 +9,8 @@ import Projects from './components/Projects';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import FireCanvas from './components/FireCanvas';
+import SpotlightCursor from './components/SpotlightCursor';
+import TechMarquee from './components/TechMarquee';
 import { audio } from './components/AudioEngine';
 import { Flame } from 'lucide-react';
 
@@ -65,6 +67,9 @@ export default function App() {
       {/* 60 FPS Procedural Burning Fire Canvas & Rising Embers */}
       <FireCanvas active={fireMode} />
 
+      {/* Interactive Magnetic Fluid Cursor & Grid Illumination Spotlight */}
+      <SpotlightCursor fireMode={fireMode} />
+
       {/* Precision Top Scroll Progress Line (White in normal, Molten Plasma in Fire Mode) */}
       <div 
         className={`fixed top-0 left-0 z-50 transition-all duration-75 ${
@@ -98,8 +103,11 @@ export default function App() {
         />
         
         <main className="flex-1">
-          {/* 1. Portrait Hero: Clean Centered Portrait, No 3D models, matching user laptop screenshot */}
+          {/* 1. Hero: Dynamic cyber typewriter roles, live radar scanner & telemetry */}
           <PortraitHero />
+
+          {/* Infinite Smooth Tech Telemetry Marquee Banner */}
+          <TechMarquee fireMode={fireMode} />
 
           {/* 2. Engineering Disciplines & Capabilities */}
           <Capabilities />

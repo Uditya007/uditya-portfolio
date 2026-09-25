@@ -105,10 +105,10 @@ export default function SapSdBridge() {
                 audio.playClick(1100);
                 setActiveStage(stage);
               }}
-              className={`p-3 sm:p-4 text-left border transition-all relative flex flex-col justify-between cursor-pointer min-h-[90px] sm:min-h-[105px] ${
+              className={`p-3 sm:p-4 text-left border transition-all duration-200 relative flex flex-col justify-between cursor-pointer min-h-[90px] sm:min-h-[105px] hover:scale-[1.02] active:scale-95 ${
                 isSelected
-                  ? 'bg-white text-black border-white shadow-lg'
-                  : 'bg-[#141414] text-[#bbb] border-white/10 hover:border-white'
+                  ? 'bg-white text-black border-white shadow-lg translate-y-[-2px]'
+                  : 'bg-[#141414] text-[#bbb] border-white/10 hover:border-white hover:bg-[#1a1a1a]'
               }`}
             >
               <div>
@@ -135,7 +135,7 @@ export default function SapSdBridge() {
       </div>
 
       {/* Selected Stage Detail & Code Payload Panel */}
-      <div className="bg-[#121212] border border-[#303030] p-4 sm:p-6 md:p-8 lg:p-10 crosshair-corner font-mono">
+      <div className="card-interactive bg-[#121212] border border-[#303030] hover:border-white/40 p-4 sm:p-6 md:p-8 lg:p-10 crosshair-corner font-mono transition-all duration-300 shadow-xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Stage Explanation */}
           <div className="lg:col-span-6 space-y-4">

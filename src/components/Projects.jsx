@@ -145,7 +145,7 @@ export default function Projects() {
           return (
             <div
               key={p.id}
-              className="bg-[#121212] border border-[#303030] p-4 sm:p-6 md:p-8 flex flex-col justify-between crosshair-corner hover:border-white transition-all group shadow-md"
+              className="card-interactive bg-[#121212] border border-[#303030] hover:border-white p-4 sm:p-6 md:p-8 flex flex-col justify-between crosshair-corner transition-all duration-300 group shadow-md"
             >
               <div>
                 {/* Meta header */}
