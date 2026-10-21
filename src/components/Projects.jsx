@@ -11,15 +11,32 @@ import {
   CheckCircle2,
   Stethoscope,
   PhoneCall,
-  Globe
+  Globe,
+  Mail,
+  Zap,
+  Target
 } from 'lucide-react';
 import { Github } from './SocialIcons';
 import { audio } from './AudioEngine';
 
 const projectList = [
   {
-    id: 'proj-clinic',
+    id: 'proj-leadscout',
     num: 'PRJ_01',
+    isFlagship: true,
+    title: 'LeadScout AI: Autonomous B2B Lead Finder, Reviews Pain-Point Intelligence & 1-Click Cold Outreach',
+    category: 'AI Engineering & Automation',
+    icon: Target,
+    desc: 'Autonomous enterprise reconnaissance bot and cold sales outreach system. Scrapes local Google Places (New) businesses, crawls multi-tier corporate subpages (/contact, /about, /team) for verified emails, analyzes customer reviews for critical operational bottlenecks (missed calls, scheduling delays, lack of web booking), and auto-crafts tailored AI cold emails and WhatsApp sales sequences.',
+    impact: 'Discovers 100+ verified corporate leads/min; crawls 5+ subpages per target discovering 3-4x more business emails; cuts B2B outbound campaign preparation from 4 hours to instantaneous 1-click dispatch.',
+    tech: ['Python', 'Google Places (New) API', 'Deep Web Crawler', 'Flask', 'AI Pitch Engine', 'Notion CRM API', 'SMTP Engine', 'WhatsApp Dialer'],
+    github: 'https://github.com/Uditya007',
+    liveUrl: '#/leadscout',
+    isLeadScout: true
+  },
+  {
+    id: 'proj-clinic',
+    num: 'PRJ_02',
     title: 'UK & Canada Clinic AI: Voice Receptionist & WhatsApp Patient Desk',
     category: 'Healthcare & Clinic AI',
     icon: Stethoscope,
@@ -31,7 +48,7 @@ const projectList = [
   },
   {
     id: 'proj-web',
-    num: 'PRJ_02',
+    num: 'PRJ_03',
     title: 'High-Performance 3D & Modern Web Platform',
     category: 'Web Development',
     icon: Globe,
@@ -43,7 +60,7 @@ const projectList = [
   },
   {
     id: 'proj-mobile',
-    num: 'PRJ_03',
+    num: 'PRJ_04',
     title: 'Cross-Platform Clinic & Booking Mobile App (iOS & Android)',
     category: 'App Development',
     icon: Smartphone,
@@ -55,7 +72,7 @@ const projectList = [
   },
   {
     id: 'proj-1',
-    num: 'PRJ_04',
+    num: 'PRJ_05',
     title: 'Enterprise WhatsApp × SAP SD Auto-Commerce Engine',
     category: 'WhatsApp + SAP SD',
     icon: Smartphone,
@@ -67,7 +84,7 @@ const projectList = [
   },
   {
     id: 'proj-2',
-    num: 'PRJ_05',
+    num: 'PRJ_06',
     title: 'Autonomous Multi-Agent Enterprise RAG Copilot',
     category: 'AI Engineering',
     icon: Bot,
@@ -79,7 +96,7 @@ const projectList = [
   },
   {
     id: 'proj-4',
-    num: 'PRJ_06',
+    num: 'PRJ_07',
     title: 'Automated SAP SD Pricing & Quotation Bot',
     category: 'SAP SD + AI',
     icon: Layers,
@@ -91,14 +108,24 @@ const projectList = [
   },
 ];
 
-export default function Projects() {
+export default function Projects({ navigateTo }) {
   const [filter, setFilter] = useState('ALL');
 
-  const categories = ['ALL', 'Healthcare & Clinic AI', 'Web Development', 'App Development', 'WhatsApp + SAP SD', 'AI Engineering'];
+  const categories = ['ALL', 'AI Engineering & Automation', 'Healthcare & Clinic AI', 'Web Development', 'App Development', 'WhatsApp + SAP SD'];
 
   const filteredProjects = filter === 'ALL'
     ? projectList
     : projectList.filter((p) => p.category.includes(filter) || filter.includes(p.category));
+
+  const handleProjectClick = (e, project) => {
+    if (project.isLeadScout) {
+      e.preventDefault();
+      audio.playConfirm();
+      if (navigateTo) navigateTo('leadscout');
+    } else {
+      audio.playConfirm();
+    }
+  };
 
   return (
     <section id="projects" className="py-20 px-4 lg:px-8 max-w-7xl mx-auto border-t border-[#262626]/20 dark:border-white/10 select-none font-neue">
@@ -114,7 +141,7 @@ export default function Projects() {
           </h2>
         </div>
         <div className="text-xs text-[#999] mt-3 md:mt-0 max-w-md">
-          Proven clinic voice & WhatsApp systems in the UK & Canada, autonomous AI agent frameworks, and SAP SD integrations.
+          Autonomous B2B lead generation &amp; outreach bots, clinic voice &amp; WhatsApp systems in the UK &amp; Canada, and enterprise SAP SD integrations.
         </div>
       </div>
 
@@ -145,15 +172,22 @@ export default function Projects() {
           return (
             <div
               key={p.id}
-              className="card-interactive bg-[#121212] border border-[#303030] hover:border-white p-4 sm:p-6 md:p-8 flex flex-col justify-between crosshair-corner transition-all duration-300 group shadow-md"
+              className={`card-interactive bg-[#121212] border ${
+                p.isFlagship ? 'border-white/40 shadow-[0_0_30px_rgba(255,255,255,0.08)]' : 'border-[#303030]'
+              } hover:border-white p-4 sm:p-6 md:p-8 flex flex-col justify-between crosshair-corner transition-all duration-300 group shadow-md`}
             >
               <div>
                 {/* Meta header */}
                 <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4 text-xs">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <span className="font-bold text-white">{p.num}</span>
                     <span className="text-[#888]">//</span>
                     <span className="text-[#aaa] font-bold uppercase">{p.category}</span>
+                    {p.isFlagship && (
+                      <span className="bg-emerald-400 text-black text-[9px] font-black uppercase px-1.5 py-0.2 rounded font-mono">
+                        FLAGSHIP
+                      </span>
+                    )}
                   </div>
                   <IconComp className="w-4 h-4 text-[#888] group-hover:text-white transition-colors" />
                 </div>
@@ -168,7 +202,7 @@ export default function Projects() {
 
                 {/* Impact callout */}
                 <div className="p-3 bg-white/5 border-l-2 border-white text-xs text-[#ddd] mb-6 font-mono">
-                  <strong className="text-white font-mono block text-[10px] uppercase mb-0.5">METRIC & IMPACT</strong>
+                  <strong className="text-white font-mono block text-[10px] uppercase mb-0.5">METRIC &amp; IMPACT</strong>
                   {p.impact}
                 </div>
 
@@ -189,11 +223,15 @@ export default function Projects() {
               <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs">
                 <a
                   href={p.liveUrl}
-                  onClick={() => audio.playConfirm()}
-                  className="inline-flex items-center gap-1.5 font-bold text-white hover:text-white/80 transition-colors cursor-pointer"
+                  onClick={(e) => handleProjectClick(e, p)}
+                  className={`inline-flex items-center gap-1.5 font-bold transition-all cursor-pointer ${
+                    p.isLeadScout 
+                      ? 'bg-white text-black px-3.5 py-1.5 rounded-full hover:bg-[#eaeaea]' 
+                      : 'text-white hover:text-white/80'
+                  }`}
                 >
-                  <span>TEST LIVE LAB</span>
-                  <ArrowUpRight className="w-4 h-4 text-white" />
+                  <span>{p.isLeadScout ? 'LAUNCH LIVE ENGINE' : 'TEST LIVE LAB'}</span>
+                  <ArrowUpRight className="w-4 h-4" />
                 </a>
 
                 <a

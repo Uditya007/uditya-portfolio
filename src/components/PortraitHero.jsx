@@ -8,20 +8,23 @@ import {
   Bot,
   Radio,
   Zap,
-  Activity
+  Activity,
+  Target,
+  Sparkles
 } from 'lucide-react';
 import { Github, Linkedin, Instagram } from './SocialIcons';
 import { audio } from './AudioEngine';
 
 const ROLES = [
   'INTELLIGENT AI CHATBOTS & RAG AGENTS',
+  'LEADSCOUT AI: B2B LEAD & EMAIL OUTREACH BOT',
   'CLINIC AI VOICE RECEPTIONISTS (UK 🇬🇧 & CANADA 🇨🇦)',
   'EXPERT WEBSITE DEVELOPMENT (REACT 19 / NEXT.JS)',
   'CROSS-PLATFORM APP DEVELOPMENT (iOS & ANDROID)',
   'SAP SD S/4HANA (ORDER-TO-CASH) SPECIALIST',
 ];
 
-export default function PortraitHero() {
+export default function PortraitHero({ navigateTo }) {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -116,17 +119,29 @@ export default function PortraitHero() {
           </div>
 
           <p className="text-xs sm:text-sm text-[#ccc] font-sans leading-relaxed max-w-xl">
-            Specializing in autonomous AI Chatbots, Clinic AI Voice Agents (UK & Canada), high-performance Website Development, and Cross-Platform App Development (iOS & Android), bridged with enterprise SAP SD ERP workflows.
+            Specializing in autonomous AI Chatbots, LeadScout AI B2B Lead Intelligence, Clinic AI Voice Agents (UK & Canada), high-performance Website Development, and Cross-Platform App Development (iOS & Android), bridged with enterprise SAP SD ERP workflows.
           </p>
 
           {/* Action Buttons */}
-          <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 font-mono text-xs">
+          <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 font-mono text-xs flex-wrap">
+            <button
+              onClick={() => {
+                audio.playConfirm();
+                if (navigateTo) navigateTo('leadscout');
+              }}
+              className="px-5 py-3 rounded-full bg-white text-black font-extrabold hover:bg-[#eaeaea] transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105 cursor-pointer flex items-center justify-center gap-2 text-center"
+            >
+              <Target className="w-4 h-4 text-black stroke-[2.5]" />
+              <span>LAUNCH LEADSCOUT AI</span>
+              <span className="text-[9px] bg-black text-white px-1.5 py-0.2 rounded font-black">NEW</span>
+            </button>
+
             <a
               href="#whatsapp-simulator"
               onClick={() => audio.playConfirm()}
-              className="btn-tactile px-6 py-3 rounded-full bg-white hover:bg-[#e0e0e0] text-black font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:scale-105 cursor-pointer flex items-center justify-center gap-2 text-center"
+              className="btn-tactile px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold transition-all hover:scale-105 cursor-pointer flex items-center justify-center gap-2 text-center"
             >
-              <span>TEST CLINIC & WHATSAPP LAB</span>
+              <span>CLINIC LAB</span>
               <ArrowDown className="w-3.5 h-3.5" />
             </a>
 
@@ -135,7 +150,7 @@ export default function PortraitHero() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => audio.playClick(1200)}
-              className="px-6 py-3 rounded-full bg-[#25d366] hover:bg-[#20ba59] text-white font-bold transition-all hover:scale-105 cursor-pointer flex items-center justify-center gap-2 text-center shadow-[0_0_20px_rgba(37,211,102,0.3)]"
+              className="px-5 py-3 rounded-full bg-[#25d366] hover:bg-[#20ba59] text-white font-bold transition-all hover:scale-105 cursor-pointer flex items-center justify-center gap-2 text-center shadow-[0_0_20px_rgba(37,211,102,0.3)]"
             >
               <Smartphone className="w-4 h-4 shrink-0" />
               <span>WHATSAPP // +91 7665941949</span>
@@ -200,6 +215,14 @@ export default function PortraitHero() {
             <div className="space-y-2.5 text-xs border-t border-b border-white/10 py-4">
               <div className="flex justify-between items-center text-[#bbb] group/row hover:text-white transition-colors">
                 <span className="text-[#888] flex items-center gap-1.5 group-hover/row:text-white transition-colors">
+                  <Target className="w-3.5 h-3.5 text-white" />
+                  LEADSCOUT AI
+                </span>
+                <span className="text-white font-bold">B2B Leads &amp; Outreach Engine</span>
+              </div>
+
+              <div className="flex justify-between items-center text-[#bbb] group/row hover:text-white transition-colors">
+                <span className="text-[#888] flex items-center gap-1.5 group-hover/row:text-white transition-colors">
                   <Bot className="w-3.5 h-3.5 text-white" />
                   AI CHATBOTS
                 </span>
@@ -253,8 +276,8 @@ export default function PortraitHero() {
             <div className="grid grid-cols-2 gap-3 text-[11px] text-[#999] pt-1">
               <div className="bg-[#181818] p-2.5 border border-white/10 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-8 h-8 bg-white/5 rounded-bl-full pointer-events-none" />
-                <span className="block text-[10px] text-[#777]">AVERAGE HOLD TIME</span>
-                <span className="text-white font-bold font-mono">0 SECONDS</span>
+                <span className="block text-[10px] text-[#777]">LEADS SCOUTED / MIN</span>
+                <span className="text-white font-bold font-mono">100+ REALTIME</span>
               </div>
               <div className="bg-[#181818] p-2.5 border border-white/10 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-8 h-8 bg-[#27c93f]/10 rounded-bl-full pointer-events-none" />

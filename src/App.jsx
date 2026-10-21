@@ -11,10 +11,20 @@ import Footer from './components/Footer';
 import FireCanvas from './components/FireCanvas';
 import SpotlightCursor from './components/SpotlightCursor';
 import TechMarquee from './components/TechMarquee';
+import LeadScoutPage from './components/LeadScoutPage';
 import { audio } from './components/AudioEngine';
 import { Flame } from 'lucide-react';
 
 export default function App() {
+  const [currentRoute, setCurrentRoute] = useState(() => {
+    const path = window.location.pathname.toLowerCase();
+    const hash = window.location.hash.toLowerCase();
+    if (path.includes('leadscout') || path.includes('lead-bot') || hash.includes('leadscout')) {
+      return 'leadscout';
+    }
+    return 'home';
+  });
+
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('uditya_theme');
     if (saved) return saved === 'dark';
@@ -37,6 +47,39 @@ export default function App() {
       document.documentElement.classList.remove('theme-fire');
     }
   }, [fireMode]);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      const path = window.location.pathname.toLowerCase();
+      const hash = window.location.hash.toLowerCase();
+      if (path.includes('leadscout') || path.includes('lead-bot') || hash.includes('leadscout')) {
+        setCurrentRoute('leadscout');
+        window.scrollTo(0, 0);
+      } else {
+        setCurrentRoute('home');
+      }
+    };
+
+    window.addEventListener('popstate', handleRouteChange);
+    window.addEventListener('hashchange', handleRouteChange);
+    return () => {
+      window.removeEventListener('popstate', handleRouteChange);
+      window.removeEventListener('hashchange', handleRouteChange);
+    };
+  }, []);
+
+  const navigateTo = (route) => {
+    audio.playClick(1200);
+    if (route === 'leadscout') {
+      window.history.pushState(null, '', '#/leadscout');
+      setCurrentRoute('leadscout');
+      window.scrollTo(0, 0);
+    } else {
+      window.history.pushState(null, '', '/');
+      setCurrentRoute('home');
+      window.scrollTo(0, 0);
+    }
+  };
 
   const handleToggleFire = () => {
     const next = !fireMode;
@@ -99,36 +142,42 @@ export default function App() {
           isDark={isDark} 
           setIsDark={setIsDark} 
           fireMode={fireMode} 
-          setFireMode={setFireMode} 
+          setFireMode={setFireMode}
+          navigateTo={navigateTo}
+          currentRoute={currentRoute}
         />
         
-        <main className="flex-1">
-          {/* 1. Hero: Dynamic cyber typewriter roles, live radar scanner & telemetry */}
-          <PortraitHero />
+        {currentRoute === 'leadscout' ? (
+          <LeadScoutPage navigateTo={navigateTo} fireMode={fireMode} />
+        ) : (
+          <main className="flex-1">
+            {/* 1. Hero: Dynamic cyber typewriter roles, live radar scanner & telemetry */}
+            <PortraitHero navigateTo={navigateTo} />
 
-          {/* Infinite Smooth Tech Telemetry Marquee Banner */}
-          <TechMarquee fireMode={fireMode} />
+            {/* Infinite Smooth Tech Telemetry Marquee Banner */}
+            <TechMarquee fireMode={fireMode} />
 
-          {/* 2. Engineering Disciplines & Capabilities */}
-          <Capabilities />
+            {/* 2. Engineering Disciplines & Capabilities */}
+            <Capabilities />
 
-          {/* 3. Live Interactive WhatsApp Automation Simulator */}
-          <WhatsAppSimulator />
+            {/* 3. Live Interactive WhatsApp Automation Simulator */}
+            <WhatsAppSimulator />
 
-          {/* 4. Autonomous AI Chatbot Terminal */}
-          <ChatbotTerminal />
+            {/* 4. Autonomous AI Chatbot Terminal */}
+            <ChatbotTerminal />
 
-          {/* 5. SAP SD Order-to-Cash Pipeline Architecture */}
-          <SapSdBridge />
+            {/* 5. SAP SD Order-to-Cash Pipeline Architecture */}
+            <SapSdBridge />
 
-          {/* 6. Proven Case Studies & Projects */}
-          <Projects />
+            {/* 6. Proven Case Studies & Projects */}
+            <Projects navigateTo={navigateTo} />
 
-          {/* 7. Contact Desk & Social Hub */}
-          <ContactSection />
-        </main>
+            {/* 7. Contact Desk & Social Hub */}
+            <ContactSection />
+          </main>
+        )}
 
-        <Footer />
+        <Footer navigateTo={navigateTo} />
       </div>
     </div>
   );

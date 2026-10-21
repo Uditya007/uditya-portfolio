@@ -9,10 +9,14 @@ import {
   Sparkles, 
   Code2, 
   CheckCircle2, 
-  ShieldCheck 
+  ShieldCheck,
+  Target,
+  Mail
 } from 'lucide-react';
 
 const marqueeItems = [
+  { icon: Target, label: 'LEADSCOUT AI ENGINE', tag: 'B2B INTENT & COLD OUTREACH' },
+  { icon: Mail, label: 'CORPORATE EMAIL CRAWLER', tag: '/CONTACT & /ABOUT SUBPAGES' },
   { icon: Bot, label: 'AI CHATBOTS & RAG', tag: 'LANGGRAPH / MULTI-AGENT' },
   { icon: Stethoscope, label: 'CLINIC AI AGENTS', tag: 'UK 🇬🇧 & CANADA 🇨🇦' },
   { icon: Globe, label: 'WEBSITE DEVELOPMENT', tag: 'REACT 19 / NEXT.JS / 3D' },
@@ -58,19 +62,12 @@ export default function TechMarquee({ fireMode }) {
                 fireMode ? 'hover:text-[#ff9d66]' : 'hover:text-white'
               }`}
             >
-              <div className={`w-1.5 h-1.5 rounded-full ${
-                fireMode ? 'bg-[#ff5500] shadow-[0_0_8px_#ff5500]' : 'bg-white/80'
-              }`} />
-              <Icon className={`w-3.5 h-3.5 ${fireMode ? 'text-[#ff7733]' : 'text-white/70'}`} />
-              <span className={`font-bold uppercase tracking-wider text-[11px] sm:text-xs ${
-                fireMode ? 'text-[#fff0e6]' : 'text-white'
-              }`}>
-                {item.label}
-              </span>
-              <span className={`text-[10px] px-1.5 py-0.5 border ${
+              <Icon className={`w-3.5 h-3.5 ${fireMode ? 'text-[#ff6622]' : 'text-white'}`} />
+              <span className="font-bold text-white tracking-wide">{item.label}</span>
+              <span className={`text-[10px] px-1.5 py-0.5 rounded border ${
                 fireMode 
-                  ? 'border-[#ff5500]/40 bg-[#ff3300]/10 text-[#ffa366]' 
-                  : 'border-white/15 bg-white/5 text-[#888]'
+                  ? 'border-[#ff4500]/40 text-[#ffb380] bg-[#220703]' 
+                  : 'border-white/15 text-[#888] bg-white/5'
               }`}>
                 {item.tag}
               </span>

@@ -1,9 +1,9 @@
 import React from 'react';
-import { ArrowUp, Heart } from 'lucide-react';
+import { ArrowUp, Heart, Sparkles } from 'lucide-react';
 import { Github, Linkedin, Instagram } from './SocialIcons';
 import { audio } from './AudioEngine';
 
-export default function Footer() {
+export default function Footer({ navigateTo }) {
   const scrollToTop = () => {
     audio.playClick(1600);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -38,16 +38,25 @@ export default function Footer() {
           <div>
             <div className="font-bold text-white uppercase mb-2">SYSTEM PROTOCOLS</div>
             <ul className="space-y-1">
-              <li>• Autonomous AI Chatbots & RAG Agents</li>
-              <li>• Clinic AI Voice Receptionists (UK & Canada)</li>
+              <li>
+                <button
+                  onClick={() => navigateTo && navigateTo('leadscout')}
+                  className="hover:text-white transition-colors text-left flex items-center gap-1 text-white font-bold cursor-pointer"
+                >
+                  <Sparkles className="w-3 h-3 text-emerald-400" />
+                  <span>LeadScout AI Outreach Engine</span>
+                </button>
+              </li>
+              <li>• Autonomous AI Chatbots &amp; RAG Agents</li>
+              <li>• Clinic AI Voice Receptionists (UK &amp; Canada)</li>
               <li>• Expert Website Development (React 19 / Next.js)</li>
-              <li>• Mobile App Development (iOS & Android)</li>
+              <li>• Mobile App Development (iOS &amp; Android)</li>
               <li>• SAP SD S/4HANA Order-to-Cash</li>
             </ul>
           </div>
 
           <div>
-            <div className="font-bold text-white uppercase mb-2">NETWORKS & CONTACT</div>
+            <div className="font-bold text-white uppercase mb-2">NETWORKS &amp; CONTACT</div>
             <ul className="space-y-1.5">
               <li>
                 <a href="https://wa.me/917665941949" target="_blank" rel="noopener noreferrer" className="hover:text-[#25d366] transition-colors flex items-center gap-1.5 text-[#25d366] font-bold">

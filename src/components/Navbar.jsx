@@ -8,12 +8,13 @@ import {
   X,
   ArrowRight,
   Smartphone,
-  Flame
+  Flame,
+  Sparkles
 } from 'lucide-react';
 import { Github, Linkedin, Instagram } from './SocialIcons';
 import { audio } from './AudioEngine';
 
-export default function Navbar({ isDark, setIsDark, fireMode, setFireMode }) {
+export default function Navbar({ isDark, setIsDark, fireMode, setFireMode, navigateTo, currentRoute }) {
   const [soundEnabled, setSoundEnabled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -40,7 +41,8 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode }) {
   };
 
   const navLinks = [
-    { label: 'Home', href: '#' },
+    { label: 'Home', href: '#', isHome: true },
+    { label: 'LeadScout AI', href: '#/leadscout', isLeadScout: true, isNew: true },
     { label: 'Expertise', href: '#capabilities' },
     { label: 'WhatsApp Bot', href: '#whatsapp-simulator' },
     { label: 'AI Terminal', href: '#chatbot' },
@@ -49,13 +51,33 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode }) {
     { label: 'Contact', href: '#contact' },
   ];
 
+  const handleLinkClick = (e, link) => {
+    audio.playClick(1100);
+    if (link.isLeadScout) {
+      e.preventDefault();
+      if (navigateTo) navigateTo('leadscout');
+      setMobileMenuOpen(false);
+    } else if (link.isHome && currentRoute === 'leadscout') {
+      e.preventDefault();
+      if (navigateTo) navigateTo('home');
+      setMobileMenuOpen(false);
+    } else if (currentRoute === 'leadscout') {
+      if (navigateTo) navigateTo('home');
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-[#0d0d0d]/90 backdrop-blur-md border-b border-white/10 text-xs font-neue select-none">
       <div className="max-w-7xl mx-auto px-3 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
         {/* Brand Logo (e.g. uditya.) */}
         <a 
           href="#" 
-          onClick={() => audio.playClick(1400)}
+          onClick={(e) => {
+            e.preventDefault();
+            audio.playClick(1400);
+            if (navigateTo) navigateTo('home');
+          }}
           className="flex items-center gap-2 group cursor-pointer"
         >
           <span className="font-bold text-lg sm:text-2xl tracking-tight text-white group-hover:text-white/80 transition-colors font-display lowercase">
@@ -68,19 +90,34 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode }) {
         </a>
 
         {/* Center Desktop Links */}
-        <nav className="hidden md:flex items-center gap-7">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => audio.playClick(1100)}
-              className={`transition-colors text-xs font-medium tracking-wide relative py-1 ${
-                fireMode ? 'text-[#ffb380] hover:text-white' : 'text-[#999] hover:text-white'
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => {
+            const isLeadScoutActive = link.isLeadScout && currentRoute === 'leadscout';
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => handleLinkClick(e, link)}
+                className={`transition-all text-xs font-medium tracking-wide relative py-1 flex items-center gap-1.5 ${
+                  link.isLeadScout
+                    ? isLeadScoutActive
+                      ? 'text-white font-extrabold bg-white/10 px-2.5 py-1 rounded-full border border-white/20'
+                      : 'text-white font-bold bg-white/5 hover:bg-white/10 px-2.5 py-1 rounded-full border border-white/15'
+                    : fireMode ? 'text-[#ffb380] hover:text-white' : 'text-[#999] hover:text-white'
+                }`}
+              >
+                {link.isLeadScout && (
+                  <Sparkles className="w-3 h-3 text-emerald-400 animate-pulse" />
+                )}
+                <span>{link.label}</span>
+                {link.isNew && (
+                  <span className="text-[9px] font-mono font-black uppercase bg-emerald-400 text-black px-1.5 py-0.2 rounded">
+                    NEW
+                  </span>
+                )}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Right CTA & Utilities */}
@@ -216,13 +253,18 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode }) {
             <a
               key={link.label}
               href={link.href}
-              onClick={() => {
-                audio.playClick();
-                setMobileMenuOpen(false);
-              }}
-              className="py-2 border-b border-white/5 text-[#ccc] hover:text-white"
+              onClick={(e) => handleLinkClick(e, link)}
+              className="py-2 border-b border-white/5 text-[#ccc] hover:text-white flex items-center justify-between"
             >
-              {link.label}
+              <span className="flex items-center gap-2">
+                {link.isLeadScout && <Sparkles className="w-3.5 h-3.5 text-emerald-400" />}
+                <span className={link.isLeadScout ? 'text-white font-bold' : ''}>{link.label}</span>
+              </span>
+              {link.isNew && (
+                <span className="text-[9px] font-mono font-bold bg-emerald-400 text-black px-1.5 py-0.2 rounded">
+                  NEW
+                </span>
+              )}
             </a>
           ))}
           <a
