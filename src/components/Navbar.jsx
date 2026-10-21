@@ -41,8 +41,8 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode, navig
   };
 
   const navLinks = [
-    { label: 'Home', href: '#', isHome: true },
-    { label: 'LeadScout AI', href: '#/leadscout', isLeadScout: true, isNew: true },
+    { label: 'Home', href: '/', isHome: true },
+    { label: 'LeadScout AI', href: '/leadscout/', isLeadScout: true, isNew: true },
     { label: 'Expertise', href: '#capabilities' },
     { label: 'WhatsApp Bot', href: '#whatsapp-simulator' },
     { label: 'AI Terminal', href: '#chatbot' },
@@ -54,9 +54,9 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode, navig
   const handleLinkClick = (e, link) => {
     audio.playClick(1100);
     if (link.isLeadScout) {
-      e.preventDefault();
-      if (navigateTo) navigateTo('leadscout');
+      window.location.href = '/leadscout/';
       setMobileMenuOpen(false);
+      return;
     } else if (link.isHome && currentRoute === 'leadscout') {
       e.preventDefault();
       if (navigateTo) navigateTo('home');

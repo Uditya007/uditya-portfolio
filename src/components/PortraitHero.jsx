@@ -124,17 +124,17 @@ export default function PortraitHero({ navigateTo }) {
 
           {/* Action Buttons */}
           <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 font-mono text-xs flex-wrap">
-            <button
+            <a
+              href="/leadscout/"
               onClick={() => {
                 audio.playConfirm();
-                if (navigateTo) navigateTo('leadscout');
               }}
               className="px-5 py-3 rounded-full bg-white text-black font-extrabold hover:bg-[#eaeaea] transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105 cursor-pointer flex items-center justify-center gap-2 text-center"
             >
               <Target className="w-4 h-4 text-black stroke-[2.5]" />
               <span>LAUNCH LEADSCOUT AI</span>
               <span className="text-[9px] bg-black text-white px-1.5 py-0.2 rounded font-black">NEW</span>
-            </button>
+            </a>
 
             <a
               href="#whatsapp-simulator"

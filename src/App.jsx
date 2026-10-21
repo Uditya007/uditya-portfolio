@@ -20,6 +20,7 @@ export default function App() {
     const path = window.location.pathname.toLowerCase();
     const hash = window.location.hash.toLowerCase();
     if (path.includes('leadscout') || path.includes('lead-bot') || hash.includes('leadscout')) {
+      window.location.replace('/leadscout/');
       return 'leadscout';
     }
     return 'home';
@@ -71,9 +72,7 @@ export default function App() {
   const navigateTo = (route) => {
     audio.playClick(1200);
     if (route === 'leadscout') {
-      window.history.pushState(null, '', '#/leadscout');
-      setCurrentRoute('leadscout');
-      window.scrollTo(0, 0);
+      window.location.href = '/leadscout/';
     } else {
       window.history.pushState(null, '', '/');
       setCurrentRoute('home');

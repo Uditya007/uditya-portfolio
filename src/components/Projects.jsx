@@ -31,7 +31,7 @@ const projectList = [
     impact: 'Discovers 100+ verified corporate leads/min; crawls 5+ subpages per target discovering 3-4x more business emails; cuts B2B outbound campaign preparation from 4 hours to instantaneous 1-click dispatch.',
     tech: ['Python', 'Google Places (New) API', 'Deep Web Crawler', 'Flask', 'AI Pitch Engine', 'Notion CRM API', 'SMTP Engine', 'WhatsApp Dialer'],
     github: 'https://github.com/Uditya007',
-    liveUrl: '#/leadscout',
+    liveUrl: '/leadscout/',
     isLeadScout: true
   },
   {
@@ -119,9 +119,8 @@ export default function Projects({ navigateTo }) {
 
   const handleProjectClick = (e, project) => {
     if (project.isLeadScout) {
-      e.preventDefault();
       audio.playConfirm();
-      if (navigateTo) navigateTo('leadscout');
+      window.location.href = '/leadscout/';
     } else {
       audio.playConfirm();
     }

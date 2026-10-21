@@ -1,8 +1,17 @@
 {
   "framework": "vite",
+  "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/leadscout",
+      "destination": "/leadscout/index.html"
+    },
+    {
+      "source": "/leadscout/(.*)",
+      "destination": "/leadscout/$1"
+    },
+    {
+      "source": "/((?!leadscout).*)",
       "destination": "/index.html"
     }
   ]

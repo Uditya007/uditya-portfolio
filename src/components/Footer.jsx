@@ -39,13 +39,13 @@ export default function Footer({ navigateTo }) {
             <div className="font-bold text-white uppercase mb-2">SYSTEM PROTOCOLS</div>
             <ul className="space-y-1">
               <li>
-                <button
-                  onClick={() => navigateTo && navigateTo('leadscout')}
+                <a
+                  href="/leadscout/"
                   className="hover:text-white transition-colors text-left flex items-center gap-1 text-white font-bold cursor-pointer"
                 >
                   <Sparkles className="w-3 h-3 text-emerald-400" />
                   <span>LeadScout AI Outreach Engine</span>
-                </button>
+                </a>
               </li>
               <li>• Autonomous AI Chatbots &amp; RAG Agents</li>
               <li>• Clinic AI Voice Receptionists (UK &amp; Canada)</li>
