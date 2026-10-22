@@ -11,7 +11,11 @@
       "destination": "/leadscout/$1"
     },
     {
-      "source": "/((?!leadscout).*)",
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/((?!leadscout|api).*)",
       "destination": "/index.html"
     }
   ]
