@@ -17,7 +17,7 @@ import { audio } from './AudioEngine';
 
 const ROLES = [
   'INTELLIGENT AI CHATBOTS & RAG AGENTS',
-  'LEADSCOUT AI: B2B LEAD & EMAIL OUTREACH BOT',
+  'PROJECT FRIDAY SOLUTIONS: B2B LEAD & EMAIL OUTREACH BOT',
   'CLINIC AI VOICE RECEPTIONISTS (UK 🇬🇧 & CANADA 🇨🇦)',
   'EXPERT WEBSITE DEVELOPMENT (REACT 19 / NEXT.JS)',
   'CROSS-PLATFORM APP DEVELOPMENT (iOS & ANDROID)',
@@ -119,7 +119,7 @@ export default function PortraitHero({ navigateTo }) {
           </div>
 
           <p className="text-xs sm:text-sm text-[#ccc] font-sans leading-relaxed max-w-xl">
-            Specializing in autonomous AI Chatbots, LeadScout AI B2B Lead Intelligence, Clinic AI Voice Agents (UK & Canada), high-performance Website Development, and Cross-Platform App Development (iOS & Android), bridged with enterprise SAP SD ERP workflows.
+            Specializing in autonomous AI Chatbots, Project Friday Solutions B2B Lead Intelligence, Clinic AI Voice Agents (UK & Canada), high-performance Website Development, and Cross-Platform App Development (iOS & Android), bridged with enterprise SAP SD ERP workflows.
           </p>
 
           {/* Action Buttons */}
@@ -132,7 +132,7 @@ export default function PortraitHero({ navigateTo }) {
               className="px-5 py-3 rounded-full bg-white text-black font-extrabold hover:bg-[#eaeaea] transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105 cursor-pointer flex items-center justify-center gap-2 text-center"
             >
               <Target className="w-4 h-4 text-black stroke-[2.5]" />
-              <span>LAUNCH LEADSCOUT AI</span>
+              <span>LAUNCH PROJECT FRIDAY SOLUTIONS</span>
               <span className="text-[9px] bg-black text-white px-1.5 py-0.2 rounded font-black">NEW</span>
             </a>
 
@@ -216,7 +216,7 @@ export default function PortraitHero({ navigateTo }) {
               <div className="flex justify-between items-center text-[#bbb] group/row hover:text-white transition-colors">
                 <span className="text-[#888] flex items-center gap-1.5 group-hover/row:text-white transition-colors">
                   <Target className="w-3.5 h-3.5 text-white" />
-                  LEADSCOUT AI
+                  PROJECT FRIDAY SOLUTIONS
                 </span>
                 <span className="text-white font-bold">B2B Leads &amp; Outreach Engine</span>
               </div>

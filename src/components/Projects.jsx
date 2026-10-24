@@ -24,7 +24,7 @@ const projectList = [
     id: 'proj-leadscout',
     num: 'PRJ_01',
     isFlagship: true,
-    title: 'LeadScout AI: Autonomous B2B Lead Finder, Reviews Pain-Point Intelligence & 1-Click Cold Outreach',
+    title: 'Project Friday Solutions: Autonomous B2B Lead Finder, Reviews Pain-Point Intelligence & 1-Click Cold Outreach',
     category: 'AI Engineering & Automation',
     icon: Target,
     desc: 'Autonomous enterprise reconnaissance bot and cold sales outreach system. Scrapes local Google Places (New) businesses, crawls multi-tier corporate subpages (/contact, /about, /team) for verified emails, analyzes customer reviews for critical operational bottlenecks (missed calls, scheduling delays, lack of web booking), and auto-crafts tailored AI cold emails and WhatsApp sales sequences.',

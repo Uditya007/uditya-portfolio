@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 
 const marqueeItems = [
-  { icon: Target, label: 'LEADSCOUT AI ENGINE', tag: 'B2B INTENT & COLD OUTREACH' },
+  { icon: Target, label: 'PROJECT FRIDAY SOLUTIONS', tag: 'B2B INTENT & COLD OUTREACH' },
   { icon: Mail, label: 'CORPORATE EMAIL CRAWLER', tag: '/CONTACT & /ABOUT SUBPAGES' },
   { icon: Bot, label: 'AI CHATBOTS & RAG', tag: 'LANGGRAPH / MULTI-AGENT' },
   { icon: Stethoscope, label: 'CLINIC AI AGENTS', tag: 'UK 🇬🇧 & CANADA 🇨🇦' },

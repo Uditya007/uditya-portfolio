@@ -10,7 +10,7 @@ export default function LeadScoutPage() {
       <div className="text-center space-y-4 p-8">
         <div className="w-10 h-10 border-3 border-black border-t-transparent rounded-full animate-spin mx-auto"></div>
         <p className="text-sm text-neutral-800 font-bold tracking-wider uppercase">
-          Launching LeadScout AI Engine...
+          Launching Project Friday Solutions Engine...
         </p>
         <p className="text-xs text-neutral-500">
           Transferring to dedicated B2B Intelligence &amp; Outreach console

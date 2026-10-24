@@ -42,7 +42,7 @@ export default function Navbar({ isDark, setIsDark, fireMode, setFireMode, navig
 
   const navLinks = [
     { label: 'Home', href: '/', isHome: true },
-    { label: 'LeadScout AI', href: '/leadscout/', isLeadScout: true, isNew: true },
+    { label: 'Project Friday Solutions', href: '/leadscout/', isLeadScout: true, isNew: true },
     { label: 'Expertise', href: '#capabilities' },
     { label: 'WhatsApp Bot', href: '#whatsapp-simulator' },
     { label: 'AI Terminal', href: '#chatbot' },
